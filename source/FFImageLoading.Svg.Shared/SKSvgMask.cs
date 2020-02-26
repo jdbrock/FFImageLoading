@@ -8,14 +8,14 @@ namespace FFImageLoading.Svg.Platform
     {
         public SKSvgMask(SKPaint stroke, SKPaint fill, XElement element)
         {
-			Stroke = stroke?.Clone();
-			Fill = fill?.Clone();
+            Stroke = stroke?.Clone();
+            Fill = fill?.Clone();
             Element = element;
         }
 
-		public SKPaint Stroke { get; }
+        public SKPaint Stroke { get; }
 
-		public SKPaint Fill { get; }
+        public SKPaint Fill { get; }
 
         public XElement Element { get; }
     }

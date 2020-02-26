@@ -58,10 +58,7 @@ namespace FFImageLoading.Svg.Platform
                 // we need to subtract baseline shift from currentY, since negative value causes shift to bottom in svg
                 canvas.DrawText(span.Text, currentX, currentY - span?.BaselineShift ?? 0, span.Fill);
 
-				if (span.Stroke != null)
-					canvas.DrawText(span.Text, currentX, currentY - span?.BaselineShift ?? 0, span.Stroke);
-
-				currentX += span.MeasureTextWidth();
+                currentX += span.MeasureTextWidth();
             }
         }
     }

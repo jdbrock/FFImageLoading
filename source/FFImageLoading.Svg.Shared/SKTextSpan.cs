@@ -11,7 +11,7 @@ namespace FFImageLoading.Svg.Platform
         public SKTextSpan(string text, SKPaint stroke, SKPaint fill, float? x = null, float? y = null, float? baselineShift = null)
         {
             Text = text;
-			Stroke = stroke;
+            Stroke = stroke;
             Fill = fill;
             X = x;
             Y = y;
@@ -22,14 +22,14 @@ namespace FFImageLoading.Svg.Platform
 
         public SKPaint Stroke { get; }
 
-		public SKPaint Fill { get; }
+        public SKPaint Fill { get; }
 
-		public float? X { get; }
+        public float? X { get; }
 
         public float? Y { get; }
 
         public float? BaselineShift { get; }
 
-		public float MeasureTextWidth() => Fill.MeasureText(Text);
-	}
+        public float MeasureTextWidth() => Fill.MeasureText(Text);
+    }
 }

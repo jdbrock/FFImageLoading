@@ -28,7 +28,8 @@ namespace FFImageLoading.Svg.Platform
 
             if (!SKColor.TryParse(str, out color))
             {
-                if (HexValues.TryGetValue(str, out var hexString))
+                string hexString = null;
+                if (HexValues.TryGetValue(str, out hexString))
                 {
                     return SKColor.TryParse(hexString, out color);
                 }

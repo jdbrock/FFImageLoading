@@ -5,8 +5,9 @@ namespace FFImageLoading.Svg.Platform
 {
     internal struct SKRadialGradient : ISKSvgFill
     {
-        public SKRadialGradient(SKPoint center, float radius, float[] positions, SKColor[] colors, SKShaderTileMode tileMode, SKMatrix matrix)
+        public SKRadialGradient(SKPoint center, float radius, float[] positions, SKColor[] colors, SKShaderTileMode tileMode, SKMatrix matrix, bool absolute)
         {
+            Absolute = absolute;
             Center = center;
             Radius = radius;
             Positions = positions;
@@ -14,6 +15,8 @@ namespace FFImageLoading.Svg.Platform
             TileMode = tileMode;
             Matrix = matrix;
         }
+
+        public bool Absolute { get; set; }
 
         public SKPoint Center { get; set; }
 
@@ -48,8 +51,19 @@ namespace FFImageLoading.Svg.Platform
 
         public void ApplyFill(SKPaint fill, SKRect bounds)
         {
-            var centerPoint = GetCenterPoint(bounds.Left, bounds.Top, bounds.Width, bounds.Height);
-            var radius = GetRadius(bounds.Width, bounds.Height);
+            SKPoint centerPoint;
+            float radius;
+
+            if (Absolute)
+            {
+                centerPoint = Center;
+                radius = Radius;
+            }
+            else
+            {
+                centerPoint = GetCenterPoint(bounds.Left, bounds.Top, bounds.Width, bounds.Height);
+                radius = GetRadius(bounds.Width, bounds.Height);
+            }
 
             var gradientShader = SKShader.CreateRadialGradient(centerPoint, radius, Colors, Positions, TileMode, Matrix);
 
