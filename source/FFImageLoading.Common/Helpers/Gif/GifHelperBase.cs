@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 namespace FFImageLoading.Helpers.Gif
 {
 	public abstract class GifHelperBase<TNativeImageContainer> : IDisposable
+		where TNativeImageContainer : class
 	{
 #pragma warning disable IDE1006 // Naming Styles
 		private const int MAX_STACK_SIZE = 4 * 1024;
