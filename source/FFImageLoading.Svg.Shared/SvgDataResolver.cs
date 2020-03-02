@@ -12,6 +12,7 @@ using System.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
 using FFImageLoading.Helpers;
+using Svg.Skia;
 
 #if __IOS__
 using Foundation;
@@ -219,17 +220,15 @@ namespace FFImageLoading.Svg.Platform
             if (resolvedData?.Stream == null)
                 throw new FileNotFoundException(identifier);
 
-            var svg = new SKSvg()
-            {
-                ThrowOnUnsupportedElement = false,
-            };
-            SKPicture picture;
+			var svg = new SKSvg();
+
+			SKPicture picture;
 
             if (ReplaceStringMap == null || ReplaceStringMap.Count == 0)
             {
                 using (var svgStream = resolvedData.Stream)
                 {
-                    picture = svg.Load(svgStream, token);
+                    picture = svg.Load(svgStream /*, token*/);
                 }
             }
             else

@@ -9,24 +9,6 @@
     <Import_RootNamespace>FFImageLoading.Svg.Platform</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)SkSvg.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SvgDataResolver.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKCanvasExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKCircle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKLine.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKOval.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKRoundedRect.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKText.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKTextSpan.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\CssHelpers.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKSvgImage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKLinearGradient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKRadialGradient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SKSvgMask.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ISKSvgFill.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
   </ItemGroup>
 </Project>
